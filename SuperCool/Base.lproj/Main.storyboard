@@ -1,25 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SuperCool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKT-Vc-BdL">
+                                <rect key="frame" x="442" y="570" width="153" height="30"/>
+                                <state key="normal" title="Make me super Cool !!"/>
+                                <connections>
+                                    <action selector="makeMeNotSoUnCool:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZEI-LS-K87"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BOOM-APP" translatesAutoresizingMaskIntoConstraints="NO" id="5IC-4v-Y4T">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="139" y="55" width="578" height="128"/>
+                                </variation>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="space" translatesAutoresizingMaskIntoConstraints="NO" id="s2e-5I-c8I">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1385" id="Oea-Yr-Hnr"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Oea-Yr-Hnr"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Oea-Yr-Hnr"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="s2e-5I-c8I" secondAttribute="trailing" id="AhB-C3-oRc"/>
+                            <constraint firstItem="s2e-5I-c8I" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-182" id="OQw-Wr-CEn"/>
+                            <constraint firstItem="s2e-5I-c8I" firstAttribute="centerX" secondItem="fKT-Vc-BdL" secondAttribute="centerX" id="W7q-cv-1S9"/>
+                            <constraint firstItem="s2e-5I-c8I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wTk-As-gba"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fKT-Vc-BdL" secondAttribute="bottom" constant="487" id="ydK-0n-p8S"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="AhB-C3-oRc"/>
+                                <exclude reference="OQw-Wr-CEn"/>
+                                <exclude reference="W7q-cv-1S9"/>
+                                <exclude reference="wTk-As-gba"/>
+                                <exclude reference="ydK-0n-p8S"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="5IC-4v-Y4T"/>
+                                <include reference="s2e-5I-c8I"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="AhB-C3-oRc"/>
+                                <include reference="OQw-Wr-CEn"/>
+                                <include reference="W7q-cv-1S9"/>
+                                <include reference="wTk-As-gba"/>
+                                <include reference="ydK-0n-p8S"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="coolBg" destination="s2e-5I-c8I" id="xXa-Pc-tSH"/>
+                        <outlet property="coolLogo" destination="5IC-4v-Y4T" id="zve-Hm-awc"/>
+                        <outlet property="uncoolButton" destination="fKT-Vc-BdL" id="7CJ-cZ-Utp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="288" y="274.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BOOM-APP" width="372" height="86"/>
+        <image name="space" width="600" height="600"/>
+    </resources>
 </document>
